@@ -278,10 +278,6 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
-input[type="number"] {
-  -moz-appearance: textfield;
-}
 .authentication_flex {
   position: relative;
   width: 100%;
@@ -291,7 +287,7 @@ input[type="number"] {
 .login_flex {
   position: absolute;
   width: 100%;
-  transition: all 0.4s ease;
+  transition: all 1s ease;
 }
 
 .login_flex {
@@ -303,12 +299,12 @@ input[type="number"] {
 }
 
 /* show signup */
-.sign_up {
+.signup_show {
   left: 0;
 }
 
 /* move login out */
-.remove_login {
+.login_hide {
   left: 100%;
   opacity: 0;
 }
@@ -316,9 +312,17 @@ input[type="number"] {
 /* reset states */
 .login_show {
   left: 0;
+  opacity: 1;
 }
 
 .signup_hide {
   left: -100%;
   opacity: 0;
+}
+.login_suggested_links {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

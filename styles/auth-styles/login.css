@@ -11,5 +11,5 @@
   width: min(8rem, 100%);
 }
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
