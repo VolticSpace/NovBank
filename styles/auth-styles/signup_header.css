@@ -26,10 +26,6 @@ body {
   padding: 0.4rem;
   background-color: var(--glass-bg);
 }
-main {
-  padding: 0rem 1.6rem;
-  margin-bottom: 2rem;
-}
 .login_hor {
   padding: 0.6rem 0.8rem;
   background-color: var(--glass-bg);
@@ -51,6 +47,7 @@ main {
 }
 .login_form {
   margin-top: 4rem;
+  padding-bottom: 4000rem;
   padding: 2rem 1.6rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.2rem;
@@ -131,7 +128,7 @@ main {
 }
 .hor_divider {
   height: 1px;
-  width: min(10rem, 100%);
+  width: min(8rem, 100%);
   border-radius: 0.8rem;
   background-color: rgba(255, 255, 255, 0.6);
 }

@@ -281,43 +281,45 @@ input[type="number"]::-webkit-inner-spin-button {
 .authentication_flex {
   position: relative;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
 }
-
 .signup_flex,
 .login_flex {
   position: absolute;
   width: 100%;
-  transition: all 1s ease;
-}
-
-.login_flex {
-  left: 0;
+  top: 0;
+  transition: all 0.8s ease;
+  padding: 2rem;
+  overflow-y: auto;
 }
 
 .signup_flex {
   left: -100%;
 }
-
-/* show signup */
-.signup_show {
-  left: 0;
-}
-
-/* move login out */
-.login_hide {
-  left: 100%;
-  opacity: 0;
-}
-
-/* reset states */
+/* login visible */
 .login_show {
-  left: 0;
+  transform: translateX(0);
   opacity: 1;
 }
 
-.signup_hide {
-  left: -100%;
+/* login hidden */
+.login_hide {
+  transform: translateX(100%);
   opacity: 0;
+}
+
+/* signup hidden */
+.signup_hide {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+/* signup visible */
+.signup_show {
+  transform: translateX(100%);
+  opacity: 1;
 }
 .login_suggested_links {
   display: flex;
@@ -325,4 +327,8 @@ input[type="number"]::-webkit-inner-spin-button {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+main {
+  min-height: 100vh;
+  overflow-y: auto;
 }

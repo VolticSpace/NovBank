@@ -10,6 +10,3 @@
 .login_divider {
   width: min(8rem, 100%);
 }
-body {
-  overflow-x: hidden;
-}
