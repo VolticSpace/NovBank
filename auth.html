@@ -62,7 +62,7 @@
             </p>
           </div>
         </div>
-        <form class="login_form">
+        <form class="signup_form">
           <h2>Create Your Account</h2>
           <p>Fill in your details to get started with NovaBank</p>
           <div class="input_con">
@@ -86,9 +86,10 @@
               <input
                 placeholder="Enter your full name"
                 type="text"
-                class="user_name input"
+                class="user_name input js_signup_name"
               />
             </div>
+            <div class="name_error_msg error_con"></div>
           </div>
           <div class="input_con">
             <h4>Email Address</h4>
@@ -111,9 +112,10 @@
               <input
                 placeholder="Enter your email"
                 type="email"
-                class="user_email input"
+                class="user_email input js_signup_email"
               />
             </div>
+            <div class="email_error_msg error_con"></div>
           </div>
           <div class="input_con">
             <h4>Phone Number</h4>
@@ -132,21 +134,22 @@
               >
                 <path
                   d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 
-17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 
-0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 
-0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 
+                 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 
+                 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
                 />
               </svg>
               <input
                 placeholder="Enter your phone number"
                 type="number"
-                class="user_phone input"
+                class="user_phone input js_signup_phone"
               />
             </div>
+            <div class="phoneNo_error_msg error_con"></div>
           </div>
           <div class="input_con">
             <h4>Password</h4>
-            <div class="input_field">
+            <div class="input_field password_con1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -166,7 +169,7 @@
               <input
                 placeholder="Create a password"
                 type="password"
-                class="user_password input"
+                class="user_password input js_signup_password"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -192,10 +195,11 @@
                 <path d="m2 2 20 20" />
               </svg>
             </div>
+            <div class="password_error_msg error_con"></div>
           </div>
           <div class="input_con">
             <h4>Confirm Password</h4>
-            <div class="input_field">
+            <div class="input_field js_user_password_con2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -215,7 +219,7 @@
               <input
                 placeholder="Confirm your password"
                 type="password"
-                class="user_email input"
+                class="js_confirm_password input"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -231,16 +235,17 @@
               >
                 <path
                   d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 
-0 .696 10.747 10.747 0 0 1-1.444 2.49"
+                0 .696 10.747 10.747 0 0 1-1.444 2.49"
                 />
                 <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
                 <path
                   d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 
-0-.696 10.75 10.75 0 0 1 4.446-5.143"
+                0-.696 10.75 10.75 0 0 1 4.446-5.143"
                 />
                 <path d="m2 2 20 20" />
               </svg>
             </div>
+            <div class="confirm_password_error_msg error_con"></div>
           </div>
           <div class="terms_privacy">
             <input type="radio" class="privacy_approval" />
@@ -418,7 +423,6 @@
         </form>
       </main>
     </div>
-
-    <script src="src/auth/signup.js"></script>
+    <script type="module" src="src/controllers/authController.js"></script>
   </body>
 </html>

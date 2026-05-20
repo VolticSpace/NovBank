@@ -294,10 +294,13 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 2rem;
   overflow-y: auto;
 }
-
-.signup_flex {
-  left: -100%;
+.login_flex {
+  left: 100%;
 }
+.signup_flex {
+  left: 0;
+}
+
 /* login visible */
 .login_show {
   transform: translateX(0);

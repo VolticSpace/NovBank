@@ -45,7 +45,8 @@ body {
 .header_txt p {
   color: rgba(255, 255, 255, 0.6);
 }
-.login_form {
+.login_form,
+.signup_form {
   margin-top: 4rem;
   padding-bottom: 4000rem;
   padding: 2rem 1.6rem;
@@ -59,6 +60,11 @@ body {
 }
 .input_con {
   margin-top: 1.6rem;
+}
+.error_con {
+  padding-top: 0.8rem;
+  padding-left: 0.4rem;
+  color: var(--danger-color);
 }
 .input_field {
   padding: 0.8rem 1.2rem;
