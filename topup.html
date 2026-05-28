@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaBank - topup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,
+    14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,
+    100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/global-styles/general.css" />
+    <link rel="stylesheet" href="styles/transfer styles/transfer.css" />
+    <link rel="stylesheet" href="styles/dashboard-styles/dashboard-main.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h2 class="hd_txt">Transfer</h2>
+      <div class="balance_con">
+        <p class="dark_txt">Available Balance</p>
+        <div class="flex">
+          <h1>$12,450.00</h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#f8fafc"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-eye-closed-icon lucide-eye-closed"
+          >
+            <path d="m15 18-.722-3.25" />
+            <path d="M2 8a10.645 10.645 0 0 0 20 0" />
+            <path d="m20 15-1.726-2.05" />
+            <path d="m4 15 1.726-2.05" />
+            <path d="m9 18 .722-3.25" />
+          </svg>
+        </div>
+      </div>
+      <div class="vector_con">
+        <img
+          class="vector"
+          src="assets/images/Graphic Plane Plane Paper Free Photo - Pesawat Kertas Png, Transparent Png , Transparent Png Image - PNGitem.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <main class="transfer_main">
+      <h3 class="main_hd_txt">Transfer To</h3>
+      <div class="transfer_options">
+        <div class="option_card">
+          <img class="icon_xl" src="assets/icons/bank_8176430.png" alt="" />
+          <h4>Bank</h4>
+        </div>
+        <div class="option_card">
+          <img class="icon_xl" src="assets/icons/call_6156062.png" alt="" />
+          <h4>Mobile Number</h4>
+        </div>
+        <div class="option_card">
+          <img
+            class="icon_xl"
+            src="assets/icons/connection_9827047.png"
+            alt=""
+          />
+          <h4>Saved Beneficiary</h4>
+        </div>
+        <div class="option_card">
+          <img
+            class="icon_xl"
+            src="assets/icons/barcode-scanner_3287063.png"
+            alt=""
+          />
+          <h4>Scan QR</h4>
+        </div>
+      </div>
+      <form action="submit" class="transfer_form">
+        <div class="input_con">
+          <h3>Select Bank</h3>
+          <div class="input_field">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0f172a"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-landmark-icon lucide-landmark"
+            >
+              <path d="M10 18v-7" />
+              <path
+                d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"
+              />
+              <path d="M14 18v-7" />
+              <path d="M18 18v-7" />
+              <path d="M3 22h18" />
+              <path d="M6 18v-7" />
+            </svg>
+            <input
+              placeholder="NovaBank"
+              type="text"
+              class="bank_input"
+              disabled
+            />
+          </div>
+          <div class="bank_name_error_msg error_con"></div>
+        </div>
+        <div class="input_con">
+          <h3>Account Number</h3>
+          <div class="input_field">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0f172a"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-scan-line-icon lucide-scan-line"
+            >
+              <path d="M3 7V5a2 2 0 0 1 2-2h2" />
+              <path d="M17 3h2a2 2 0 0 1 2 2v2" />
+              <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
+              <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
+              <path d="M7 12h10" />
+            </svg>
+            <input
+              placeholder="Enter Account Number"
+              type="number"
+              class="bank_input"
+            />
+          </div>
+          <div class="bank_name_error_msg error_con"></div>
+        </div>
+        <div class="input_con">
+          <h3>Account Name</h3>
+          <div class="input_field">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0f172a"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-user-round-icon lucide-user-round"
+            >
+              <circle cx="12" cy="8" r="5" />
+              <path d="M20 21a8 8 0 0 0-16 0" />
+            </svg>
+            <input placeholder="Account Name" type="text" class="bank_input" />
+          </div>
+          <div class="bank_name_error_msg error_con"></div>
+        </div>
+        <div class="input_con">
+          <h3>Amount</h3>
+          <div class="input_field">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0f172a"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-dollar-sign-icon lucide-dollar-sign"
+            >
+              <line x1="12" x2="12" y1="2" y2="22" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+            <input placeholder="Enter Amount" type="text" class="bank_input" />
+          </div>
+          <div class="bank_name_error_msg error_con"></div>
+        </div>
+        <div class="input_con">
+          <h3>Narration <span class="light_black">(Optional)</span></h3>
+          <div class="input_field">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0f172a"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-notepad-text-icon lucide-notepad-text"
+            >
+              <path d="M8 2v4" />
+              <path d="M12 2v4" />
+              <path d="M16 2v4" />
+              <rect width="16" height="18" x="4" y="4" rx="2" />
+              <path d="M8 10h6" />
+              <path d="M8 14h8" />
+              <path d="M8 18h5" />
+            </svg>
+            <input
+              placeholder="What's this for?"
+              type="text"
+              class="bank_input"
+            />
+          </div>
+          <div class="bank_name_error_msg error_con"></div>
+        </div>
+        <button type="button" class="transfer_btn">Transfer</button>
+      </form>
+    </main>
+    <div class="bottom_navigation">
+      <div class="action_con" tabindex="0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#f8fafc"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-house-icon lucide-house"
+        >
+          <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+          <path
+            d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 
+          1-2-2z"
+          />
+        </svg>
+        <p>Dashboard</p>
+      </div>
+      <div class="action_con" tabindex="0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#f8fafc"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-wallet-icon lucide-wallet"
+        >
+          <path
+            d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 
+        0 0 0-1-1"
+          />
+          <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
+        </svg>
+        <p>Accounts</p>
+      </div>
+      <div class="action_con" tabindex="0">
+        <div class="transfer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"
+          >
+            <path d="M7 7h10v10" />
+            <path d="M7 17 17 7" />
+          </svg>
+        </div>
+        <p>Transfer</p>
+      </div>
+      <div class="action_con" tabindex="0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#f8fafc"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-credit-card-icon lucide-credit-card"
+        >
+          <rect width="20" height="14" x="2" y="5" rx="2" />
+          <line x1="2" x2="22" y1="10" y2="10" />
+        </svg>
+        <p>Cards</p>
+      </div>
+      <div class="action_con" tabindex="0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#f8fafc"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-user-round-pen-icon lucide-user-round-pen"
+        >
+          <path d="M2 21a8 8 0 0 1 10.821-7.487" />
+          <path
+            d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.
+          62l2.87-.837a2 2 0 0 0 .854-.506z"
+          />
+          <circle cx="10" cy="8" r="5" />
+        </svg>
+        <p>Profile</p>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>

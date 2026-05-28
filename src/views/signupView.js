@@ -10,3 +10,7 @@ export const clearErrorMsg = function () {
     .querySelectorAll(".error_con")
     .forEach((con) => (con.textContent = ""));
 };
+
+export const clearInputFields = function (fields) {
+  fields.forEach((field) => (field.value = ""));
+};

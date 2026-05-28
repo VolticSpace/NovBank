@@ -61,7 +61,8 @@
       </nav>
       <div class="user_greet_board">
         <p class="greet">Good morning,</p>
-        <h2>John Doe 👋</h2>
+        <h2><span class="user_name"></span>👋</h2>
+        <p class="account-no"></p>
       </div>
       <div class="user_dashboard">
         <div class="balance_view_con">
@@ -89,11 +90,11 @@
           </svg>
         </div>
         <div class="balance_con">
-          <h2>$2,450,000.00</h2>
+          <h2 class="db_total_bal"></h2>
         </div>
         <div class="available_balance_con">
           <p>Available Balance</p>
-          <p class="avail_balance">$2,350,000.00</p>
+          <p class="avail_balance db_avail_bal"></p>
         </div>
         <div class="stat">
           <svg
@@ -115,7 +116,7 @@
         </div>
       </div>
       <div class="user_services_con">
-        <div class="service_card">
+        <div class="service_card transfer_btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -135,7 +136,7 @@
           </svg>
           Transfer
         </div>
-        <div class="service_card">
+        <div class="service_card topup_btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -154,7 +155,7 @@
           </svg>
           Top Up
         </div>
-        <div class="service_card">
+        <div class="service_card pay_bill_btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -176,7 +177,7 @@
           </svg>
           Pay Bills
         </div>
-        <div class="service_card">
+        <div class="service_card more_btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -241,161 +242,7 @@
           <p>Recent Transactions</p>
           <p class="view_all">See All</p>
         </div>
-        <div class="transaction_detail">
-          <div class="detail_left">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#f8fafc"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-wifi-icon lucide-wifi"
-            >
-              <path d="M12 20h.01" />
-              <path d="M2 8.82a15 15 0 0 1 20 0" />
-              <path d="M5 12.859a10 10 0 0 1 14 0" />
-              <path d="M8.5 16.429a5 5 0 0 1 7 0" />
-            </svg>
-            <div class="flex_row">
-              <p class="account_type">Airtime Purchase</p>
-              <p class="account_id">Today,<span>10:30AM</span></p>
-            </div>
-          </div>
-          <div class="detail_right">
-            <p class="account_bal">$2,350.00</p>
-            <div class="account_mode">
-              <p class="mode">successful</p>
-            </div>
-          </div>
-        </div>
-        <div class="transaction_detail">
-          <div class="detail_left">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#f8fafc"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-wifi-icon lucide-wifi"
-            >
-              <path d="M12 20h.01" />
-              <path d="M2 8.82a15 15 0 0 1 20 0" />
-              <path d="M5 12.859a10 10 0 0 1 14 0" />
-              <path d="M8.5 16.429a5 5 0 0 1 7 0" />
-            </svg>
-            <div class="flex_row">
-              <p class="account_type">Airtime Purchase</p>
-              <p class="account_id">Today,<span>10:30AM</span></p>
-            </div>
-          </div>
-          <div class="detail_right">
-            <p class="account_bal">$2,350.00</p>
-            <div class="account_mode">
-              <p class="mode">successful</p>
-            </div>
-          </div>
-        </div>
-        <div class="transaction_detail">
-          <div class="detail_left">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#f8fafc"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-wifi-icon lucide-wifi"
-            >
-              <path d="M12 20h.01" />
-              <path d="M2 8.82a15 15 0 0 1 20 0" />
-              <path d="M5 12.859a10 10 0 0 1 14 0" />
-              <path d="M8.5 16.429a5 5 0 0 1 7 0" />
-            </svg>
-            <div class="flex_row">
-              <p class="account_type">Airtime Purchase</p>
-              <p class="account_id">Today,<span>10:30AM</span></p>
-            </div>
-          </div>
-          <div class="detail_right">
-            <p class="account_bal">$2,350.00</p>
-            <div class="account_mode">
-              <p class="mode">successful</p>
-            </div>
-          </div>
-        </div>
-        <div class="transaction_detail">
-          <div class="detail_left">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#f8fafc"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-wifi-icon lucide-wifi"
-            >
-              <path d="M12 20h.01" />
-              <path d="M2 8.82a15 15 0 0 1 20 0" />
-              <path d="M5 12.859a10 10 0 0 1 14 0" />
-              <path d="M8.5 16.429a5 5 0 0 1 7 0" />
-            </svg>
-            <div class="flex_row">
-              <p class="account_type">Airtime Purchase</p>
-              <p class="account_id">Today,<span>10:30AM</span></p>
-            </div>
-          </div>
-          <div class="detail_right">
-            <p class="account_bal">$2,350.00</p>
-            <div class="account_mode">
-              <p class="mode">successful</p>
-            </div>
-          </div>
-        </div>
-        <div class="transaction_detail">
-          <div class="detail_left">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#f8fafc"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-wifi-icon lucide-wifi"
-            >
-              <path d="M12 20h.01" />
-              <path d="M2 8.82a15 15 0 0 1 20 0" />
-              <path d="M5 12.859a10 10 0 0 1 14 0" />
-              <path d="M8.5 16.429a5 5 0 0 1 7 0" />
-            </svg>
-            <div class="flex_row">
-              <p class="account_type">Airtime Purchase</p>
-              <p class="account_id">Today,<span>10:30AM</span></p>
-            </div>
-          </div>
-          <div class="detail_right">
-            <p class="account_bal">$2,350.00</p>
-            <div class="account_mode">
-              <p class="mode">successful</p>
-            </div>
-          </div>
-        </div>
+        <div class="transaction_movement_con"></div>
       </div>
     </main>
     <div class="bottom_navigation">
@@ -500,5 +347,11 @@
         <p>Profile</p>
       </div>
     </div>
+
+    <script
+      defer
+      type="module"
+      src="src/controllers/dashboardController.js"
+    ></script>
   </body>
 </html>

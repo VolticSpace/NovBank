@@ -295,10 +295,10 @@ input[type="number"]::-webkit-inner-spin-button {
   overflow-y: auto;
 }
 .login_flex {
-  left: 100%;
+  left: 0;
 }
 .signup_flex {
-  left: 0;
+  left: 100%;
 }
 
 /* login visible */
@@ -337,4 +337,7 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 2px;
   margin: 0 0.8rem;
   background-color: rgba(255, 255, 255, 0.1);
+}
+div {
+  cursor: pointer;
 }

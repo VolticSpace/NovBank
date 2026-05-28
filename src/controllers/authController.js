@@ -1,6 +1,10 @@
 "use strict";
 import { AuthManager } from "../services/AuthManager.js";
-import { renderError, clearErrorMsg } from "../views/signupView.js";
+import {
+  renderError,
+  clearErrorMsg,
+  clearInputFields,
+} from "../views/signupView.js";
 import { validateSignup } from "../utils/formValidator.js";
 
 const auth = new AuthManager();
@@ -31,9 +35,30 @@ const passwordErrorCon = document.querySelector(".password_error_msg");
 const confirmPasswordErrorCon = document.querySelector(
   ".confirm_password_error_msg",
 );
-const form = document.querySelector(".signup_form");
-const errorCons = form.querySelectorAll(".error_con");
-("use strict");
+const signupForm = document.querySelector(".signup_form");
+const loginForm = document.querySelector(".login_form");
+const errorCons = signupForm.querySelectorAll(".error_con");
+const signupInputFields = signupForm.querySelectorAll("input");
+const loginInputFields = loginForm.querySelectorAll("input");
+const loginBtn = document.querySelector(".login_btn");
+const loginEmailInput = document.querySelector(".login_email");
+const loginPasswordInput = document.querySelector(".login_password");
+loginBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  try {
+    auth.login(
+      loginEmailInput.value,
+      loginPasswordInput.value,
+      loginInputFields,
+    );
+  } catch (err) {
+    renderError({
+      general: err.message,
+    });
+    clearInputFields(loginInputFields);
+  }
+});
 
 signupBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -49,12 +74,19 @@ signupBtn.addEventListener("click", (e) => {
     renderError(errors);
     return;
   }
-  auth.signup(
-    signupNameInput,
-    signupPasswordInput,
-    signupEmailInput,
-    signupPhoneInput,
-  );
-  clearErrorMsg();
-  console.log(auth.getUserArray());
+  try {
+    auth.signup(
+      signupNameInput.value,
+      signupPasswordInput.value,
+      signupEmailInput.value,
+      signupPhoneInput.value,
+      signupInputFields,
+    );
+  } catch (err) {
+    renderError({
+      general: err.message,
+    });
+    clearInputFields(inputFields);
+  }
 });
+// auth.deleteUsers();

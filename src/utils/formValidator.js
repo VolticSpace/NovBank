@@ -11,3 +11,7 @@ export const validateSignup = function (inputs) {
   if (!validators.email(inputs.email)) errors.email = "Invalid Email";
   return errors;
 };
+
+export const validateTransfer = (inputs) => {
+  const errors = {};
+};

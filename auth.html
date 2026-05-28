@@ -8,14 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,
-14..32,100..900;1,14..32,100..900&display=swap"
+    14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,
-100..900;1,100..900&display=swap"
+    100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/global-styles/general.css" />
@@ -24,6 +24,9 @@
   </head>
   <body>
     <header class="header">
+      <div class="general_error_msg error_con">
+        <!-- <p>Email already exist!</p> -->
+      </div>
       <h3>Nova<span>Bank</span></h3>
       <div class="mode">
         <div class="mode_switch">
@@ -327,9 +330,10 @@
               <input
                 placeholder="Enter your email"
                 type="email"
-                class="user_email input"
+                class="input login_email"
               />
             </div>
+            <div class="error_con login_email_error_msg"></div>
           </div>
           <div class="input_con">
             <h4>Password</h4>
@@ -353,7 +357,7 @@
               <input
                 placeholder="Create a password"
                 type="password"
-                class="user_password input"
+                class="login_password input"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -379,6 +383,7 @@
                 <path d="m2 2 20 20" />
               </svg>
             </div>
+            <div class="error_con login_password_error_msg"></div>
           </div>
           <div class="terms_privacy password_entries_con">
             <div class="hor_flex">
@@ -389,7 +394,7 @@
               <a href="#">Forgot password?</a>
             </p>
           </div>
-          <button type="submit" class="create_account_btn button">Login</button>
+          <button type="submit" class="button login_btn">Login</button>
           <div class="signup_options_con_txt">
             <div class="hor_divider login_divider"></div>
             <p>Or continue with</p>
