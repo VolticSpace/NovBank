@@ -1,5 +1,6 @@
 body {
   background: var(--gradient-secondary);
+  min-height: 100vh;
 }
 .dashboard_header {
   padding: 2rem 1.6rem 0rem 1.6rem;
