@@ -28,21 +28,21 @@ export class AuthManager {
       phoneNo,
       accountNo: createAccountNo(),
       id: createId(),
-      balance: 10000,
+      balance: 1000000,
       transactions: [],
       notifications: [
         {
-          id: 1,
-          userId: 20,
+          id: createId(),
           title: "Registration Completed",
           message:
             "Your account setup has been completed successfully. Welcome to a smarter banking experience with NovaBank, where security, convenience, and reliability come first. Start exploring our services and enjoy effortless banking today.",
           type: "success",
           read: false,
-          createdAt: new Date().toLocaleTimeString(),
+          createdAt: new Date().toLocaleDateString(),
           icon: "✔",
         },
       ],
+      notificationMirror: [""],
     };
     this.addUser(user);
     this.saveUser();

@@ -1,6 +1,7 @@
 export const renderNotification = (arr, con) => {
+  con.innerHTML = "";
   let html = "";
-
+  if (!arr?.length > 0) return;
   arr.forEach((item) => {
     html += `
        <div class="notification ${item.type}" data-notification_id="${item.id}">
@@ -15,6 +16,5 @@ export const renderNotification = (arr, con) => {
        </div>
        `;
   });
-  con.innerHTML = "";
-  con.insertAdjacentHTML("beforeend", html);
+  con.insertAdjacentHTML("afterbegin", html);
 };
