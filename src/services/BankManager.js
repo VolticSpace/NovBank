@@ -47,6 +47,7 @@ export class BankManager extends AuthManager {
         message: `You tried to transfer to an invalid account number`,
         type: "warning",
         read: false,
+<<<<<<< HEAD
         createdAt: {
           time: new Date().toLocaleTimeString(),
           date: new Date().toLocaleDateString(),
@@ -74,6 +75,32 @@ export class BankManager extends AuthManager {
         icon: "📌",
       });
 
+=======
+        createdAt: new Date().toLocaleDateString(),
+        reference: `TNX${Date.now()}`,
+        icon: "📌",
+      });
+
+      currentUser.notificationMirror.push("");
+      this.saveUser();
+      this.saveCurrentUser(currentUser);
+      throw new Error("Invalid Account Number");
+    }
+
+    if (!sufficientAmount) {
+      currentUser.notifications.push({
+        id: createId(),
+        title: "Transfer Failed",
+        message: `Your balance is too low to do such transaction`,
+        type: "warning",
+        read: false,
+        createdAt: new Date().toLocaleDateString(),
+        reference: `TNX${Date.now()}`,
+        icon: "📌",
+      });
+
+      currentUser.notificationMirror.push("");
+>>>>>>> 612335592106f8ce5d91b45d5bace4977fe95207
       this.saveUser();
       this.saveCurrentUser(currentUser);
       throw new Error("Insufficient balance");
@@ -86,14 +113,22 @@ export class BankManager extends AuthManager {
         message: `You tried transfering to yourself`,
         type: "warning",
         read: false,
+<<<<<<< HEAD
         createdAt: {
           time: new Date().toLocaleTimeString(),
           date: new Date().toLocaleDateString(),
         },
+=======
+        createdAt: new Date().toLocaleDateString(),
+>>>>>>> 612335592106f8ce5d91b45d5bace4977fe95207
         reference: `TNX${Date.now()}`,
         icon: "📌",
       });
 
+<<<<<<< HEAD
+=======
+      currentUser.notificationMirror.push("");
+>>>>>>> 612335592106f8ce5d91b45d5bace4977fe95207
       this.saveUser();
       this.saveCurrentUser(currentUser);
       throw new Error("You cannot transfer to yourself");
@@ -127,10 +162,14 @@ export class BankManager extends AuthManager {
       message: `You transfer of NGN ${inputs.amount} to ${receiver.fullName}[${receiver.accountNo}] is successful`,
       type: "success",
       read: false,
+<<<<<<< HEAD
       createdAt: {
         time: new Date().toLocaleTimeString(),
         date: new Date().toLocaleDateString(),
       },
+=======
+      createdAt: new Date().toLocaleDateString(),
+>>>>>>> 612335592106f8ce5d91b45d5bace4977fe95207
       reference: `TNX${Date.now()}`,
       icon: "✔",
     });
@@ -143,13 +182,19 @@ export class BankManager extends AuthManager {
       } [${currentUser.accountNo}] which as being added to your balance`,
       type: "success",
       read: false,
+<<<<<<< HEAD
       createdAt: {
         time: new Date().toLocaleTimeString(),
         date: new Date().toLocaleDateString(),
       },
+=======
+      createdAt: new Date().toLocaleDateString(),
+>>>>>>> 612335592106f8ce5d91b45d5bace4977fe95207
       reference: `TNX${Date.now()}`,
       icon: "✔",
     });
+    receiver.notificationMirror.push("");
+    currentUser.notificationMirror.push("");
     this.saveUser();
     this.saveCurrentUser(currentUser);
 

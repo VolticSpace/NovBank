@@ -28,6 +28,7 @@ export class AuthManager {
       email,
       phoneNo,
       accountNo: createAccountNo(),
+<<<<<<< HEAD
       id,
       balance: 10000000,
       transactions: [],
@@ -35,18 +36,31 @@ export class AuthManager {
         {
           id,
           userId: 20,
+=======
+      id: createId(),
+      balance: 1000000,
+      transactions: [],
+      notifications: [
+        {
+          id: createId(),
+>>>>>>> 612335592106f8ce5d91b45d5bace4977fe95207
           title: "Registration Completed",
           message:
             "Your account setup has been completed successfully. Welcome to a smarter banking experience with NovaBank, where security, convenience, and reliability come first. Start exploring our services and enjoy effortless banking today.",
           type: "success",
           read: false,
+<<<<<<< HEAD
           createdAt: {
             time: new Date().toLocaleTimeString(),
             date: new Date().toLocaleDateString(),
           },
+=======
+          createdAt: new Date().toLocaleDateString(),
+>>>>>>> 612335592106f8ce5d91b45d5bace4977fe95207
           icon: "✔",
         },
       ],
+      notificationMirror: [""],
     };
     this.addUser(user);
     this.saveUser();
