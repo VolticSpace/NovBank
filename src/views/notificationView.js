@@ -17,7 +17,5 @@ export const renderNotification = (arr, con) => {
        </div>
        `;
   });
-
-  con.insertAdjacentHTML("beforeend", html);
   con.insertAdjacentHTML("afterbegin", html);
 };
