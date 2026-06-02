@@ -58,12 +58,9 @@ const renderDashboard = function () {
   accountNoCon.textContent = `Account Number : ${dashboardManager.getCurrentUser().accountNo}`;
   renderTransactions(dashboardManager.getTransaction(), transactionsCon);
   greetMessage.textContent = `${greetUser()},`;
-<<<<<<< HEAD
   renderNotificationCount();
-=======
   notificationCount.textContent =
     dashboardManager.getCurrentUser().notificationMirror.length;
->>>>>>> 612335592106f8ce5d91b45d5bace4977fe95207
 };
 renderDashboard();
 function clearEyeClasses() {
