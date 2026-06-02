@@ -21,25 +21,29 @@ export class AuthManager {
       throw new Error("User already exists!");
     }
 
+    const id = createId();
     const user = {
       fullName,
       password,
       email,
       phoneNo,
       accountNo: createAccountNo(),
-      id: createId(),
-      balance: 10000,
+      id,
+      balance: 10000000,
       transactions: [],
       notifications: [
         {
-          id: 1,
+          id,
           userId: 20,
           title: "Registration Completed",
           message:
             "Your account setup has been completed successfully. Welcome to a smarter banking experience with NovaBank, where security, convenience, and reliability come first. Start exploring our services and enjoy effortless banking today.",
           type: "success",
           read: false,
-          createdAt: new Date().toLocaleTimeString(),
+          createdAt: {
+            time: new Date().toLocaleTimeString(),
+            date: new Date().toLocaleDateString(),
+          },
           icon: "✔",
         },
       ],

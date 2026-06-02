@@ -1,5 +1,5 @@
 import { AuthManager } from "./AuthManager.js";
-import { formatCurrency } from "../utils/helpers.js";
+import { createId, formatCurrency } from "../utils/helpers.js";
 
 export class BankManager extends AuthManager {
   #balance;
@@ -40,15 +40,68 @@ export class BankManager extends AuthManager {
 
     const sufficientAmount = currentUser.balance >= inputs.amount;
 
-    if (!receiver) throw new Error("Invalid Account Number");
+    if (!receiver) {
+      currentUser.notifications.push({
+        id: createId(),
+        title: "Transfer Failed",
+        message: `You tried to transfer to an invalid account number`,
+        type: "warning",
+        read: false,
+        createdAt: {
+          time: new Date().toLocaleTimeString(),
+          date: new Date().toLocaleDateString(),
+        },
+        reference: `TNX${Date.now()}`,
+        icon: "📌",
+      });
+      this.saveUser();
+      this.saveCurrentUser(currentUser);
+      throw new Error("Invalid Account Number");
+    }
 
-    if (!sufficientAmount) throw new Error("Insufficient balance");
+    if (!sufficientAmount) {
+      currentUser.notifications.push({
+        id: createId(),
+        title: "Transfer Failed",
+        message: `Your balance is too low to do such transaction`,
+        type: "warning",
+        read: false,
+        createdAt: {
+          time: new Date().toLocaleTimeString(),
+          date: new Date().toLocaleDateString(),
+        },
+        reference: `TNX${Date.now()}`,
+        icon: "📌",
+      });
 
-    if (currentUser.accountNo === receiver.accountNo)
+      this.saveUser();
+      this.saveCurrentUser(currentUser);
+      throw new Error("Insufficient balance");
+    }
+
+    if (currentUser.accountNo === receiver.accountNo) {
+      currentUser.notifications.push({
+        id: createId(),
+        title: "Transfer Failed",
+        message: `You tried transfering to yourself`,
+        type: "warning",
+        read: false,
+        createdAt: {
+          time: new Date().toLocaleTimeString(),
+          date: new Date().toLocaleDateString(),
+        },
+        reference: `TNX${Date.now()}`,
+        icon: "📌",
+      });
+
+      this.saveUser();
+      this.saveCurrentUser(currentUser);
       throw new Error("You cannot transfer to yourself");
+    }
 
     receiver.balance += inputs.amount;
     currentUser.balance -= inputs.amount;
+
     currentUser.transactions.push({
       amount: inputs.amount,
       sender: currentUser.fullName,
@@ -60,7 +113,7 @@ export class BankManager extends AuthManager {
     });
 
     receiver.transactions.push({
-      amount: +inputs.amount,
+      amount: inputs.amount,
       sender: currentUser.fullName,
       receiver: receiver.fullName,
       type: "deposit",
@@ -69,23 +122,33 @@ export class BankManager extends AuthManager {
     });
 
     currentUser.notifications.push({
-      amount: inputs.amount,
-      sender: currentUser.fullName,
-      receiver: receiver.fullName,
-      type: "transfer",
-      timestamp: new Date().toLocaleDateString(),
+      id: createId(),
+      title: "Transfer Alert",
+      message: `You transfer of NGN ${inputs.amount} to ${receiver.fullName}[${receiver.accountNo}] is successful`,
+      type: "success",
+      read: false,
+      createdAt: {
+        time: new Date().toLocaleTimeString(),
+        date: new Date().toLocaleDateString(),
+      },
       reference: `TNX${Date.now()}`,
-      naration: inputs.naration,
+      icon: "✔",
     });
 
-    receiver.transactions.push({
-      amount: inputs.amount,
-      sender: currentUser.fullName,
-      receiver: receiver.fullName,
-      type: "deposit",
-      timestamp: new Date().toLocaleDateString(),
+    receiver.notifications.push({
+      id: createId(),
+      title: "Credit Alert",
+      message: `You received  NGN ${inputs.amount} from ${
+        currentUser.fullName
+      } [${currentUser.accountNo}] which as being added to your balance`,
+      type: "success",
+      read: false,
+      createdAt: {
+        time: new Date().toLocaleTimeString(),
+        date: new Date().toLocaleDateString(),
+      },
       reference: `TNX${Date.now()}`,
-      naration: inputs.naration,
+      icon: "✔",
     });
     this.saveUser();
     this.saveCurrentUser(currentUser);
@@ -97,7 +160,6 @@ export class BankManager extends AuthManager {
   }
 
   topUp() {}
-  addNotification() {}
   getNotifications() {}
   saveDashboardData() {}
   loadDashboardData() {}

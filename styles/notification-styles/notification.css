@@ -34,6 +34,11 @@ body {
   color: white;
   border-radius: 6px;
   cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.notification-header button:hover {
+  background-color: var(--primary-color);
 }
 
 .notifications-container {
@@ -50,8 +55,16 @@ body {
   background: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   align-items: flex-start;
+  transition: all 0.4s ease;
 }
 
+.notification:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.read {
+  background-color: rgba(255, 255, 255, 0.6);
+}
 .icon_real {
   width: 25px;
   height: 25px;
@@ -93,10 +106,10 @@ body {
   background: #dc2626;
 }
 
-.credit .icon_real {
+.deposit .icon_real {
   background: #2563eb;
 }
 
-.failed .icon_real {
+.warning .icon_real {
   background: #f59e0b;
 }

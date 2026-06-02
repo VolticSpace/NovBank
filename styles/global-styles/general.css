@@ -363,6 +363,6 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0 0.8rem;
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* div { */
-/* cursor: pointer; */
-/* } */
+.active {
+  background: var(--gradient-primary);
+}

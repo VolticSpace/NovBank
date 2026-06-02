@@ -113,12 +113,12 @@ body {
   color: var(--text-primary);
   font-size: 0.8rem;
 }
-.action_con:hover {
-  background: var(--gradient-secondary);
-}
-.action_con:focus {
-  background: var(--gradient-primary);
-}
+/* .action_con:hover { */
+/* background: var(--gradient-secondary); */
+/* } */
+/* .action_con:focus { */
+/* background: var(--gradient-primary); */
+/* } */
 .transfer {
   background: var(--gradient-primary);
   padding: 1.2rem;

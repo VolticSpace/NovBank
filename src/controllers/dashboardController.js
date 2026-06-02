@@ -37,6 +37,19 @@ topupBtn.addEventListener("click", (e) => {
   e.preventDefault();
   window.location.href = "topup.html";
 });
+const renderNotificationCount = () => {
+  const users = dashboardManager.getUserArray();
+  const isCurrentUser = users.find(
+    (user) => user.email === dashboardManager.getCurrentUser().email,
+  );
+
+  if (!isCurrentUser) return;
+
+  let unreadMsg = isCurrentUser.notifications.filter(
+    (Notification) => Notification.read === false,
+  );
+  notificationCount.textContent = unreadMsg.length;
+};
 const renderDashboard = function () {
   dbUserName.textContent = dashboardManager.getCurrentUser().fullName;
   dbTotalBal.textContent = dashboardManager.getBalance();
@@ -45,8 +58,7 @@ const renderDashboard = function () {
   accountNoCon.textContent = `Account Number : ${dashboardManager.getCurrentUser().accountNo}`;
   renderTransactions(dashboardManager.getTransaction(), transactionsCon);
   greetMessage.textContent = `${greetUser()},`;
-  notificationCount.textContent =
-    dashboardManager.getCurrentUser().notifications.length;
+  renderNotificationCount();
 };
 renderDashboard();
 function clearEyeClasses() {
