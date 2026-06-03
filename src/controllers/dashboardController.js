@@ -59,8 +59,6 @@ const renderDashboard = function () {
   renderTransactions(dashboardManager.getTransaction(), transactionsCon);
   greetMessage.textContent = `${greetUser()},`;
   renderNotificationCount();
-  notificationCount.textContent =
-    dashboardManager.getCurrentUser().notificationMirror.length;
 };
 renderDashboard();
 function clearEyeClasses() {

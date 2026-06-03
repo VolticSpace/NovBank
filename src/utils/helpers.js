@@ -34,8 +34,9 @@ export const formatMovement = (obj) => {
   return obj.type === "transfer" ? `-${move}` : move;
 };
 export const formatCurrency = (amount) => {
-  return amount.toLocaleString(navigator.language, {
+  const currency = new Intl.NumberFormat(navigator.language, {
     style: "currency",
     currency: "NGN",
   });
+  return currency.format(amount);
 };

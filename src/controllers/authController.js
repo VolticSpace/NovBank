@@ -50,6 +50,86 @@ const loginInputFields = loginForm.querySelectorAll("input");
 const loginBtn = document.querySelector(".login_btn");
 const loginEmailInput = document.querySelector(".login_email");
 const loginPasswordInput = document.querySelector(".login_password");
+const passwordTypeCon = document.querySelector(".password_icon");
+const openEye = document.querySelector(".open_eye");
+const closedEye = document.querySelector(".closed_eye");
+
+const passwordTypeCon2 = document.querySelector(".password_icon2");
+const openEye2 = document.querySelector(".open_eye2");
+const closedEye2 = document.querySelector(".closed_eye2");
+
+const clearPasswordInputClasses = () => {
+  if (openEye || closedEye) {
+    openEye.classList.remove("hide");
+    openEye.classList.remove("show");
+    closedEye.classList.remove("hide");
+    closedEye.classList.remove("show");
+  } else return;
+};
+
+const clearConfirmPasswordInputClasses = () => {
+  if (openEye2 || closedEye2) {
+    openEye2.classList.remove("hide");
+    openEye2.classList.remove("show");
+    closedEye2.classList.remove("hide");
+    closedEye2.classList.remove("show");
+  } else return;
+};
+passwordTypeCon.addEventListener("click", (e) => {
+  e.preventDefault();
+  const target = e.target.closest(".eye_icon");
+  console.log(target);
+  if (!target) return;
+
+  if (target.classList.contains("closed_eye")) {
+    clearPasswordInputClasses();
+
+    if (signupPasswordInput.type === "password") {
+      signupPasswordInput.type = "text";
+    }
+
+    closedEye.classList.add("hide");
+    openEye.classList.add("show");
+    console.log(inputField);
+  } else if (target.classList.contains("open_eye")) {
+    clearPasswordInputClasses();
+
+    if (signupPasswordInput.type === "text") {
+      signupPasswordInput.type = "password";
+    }
+
+    closedEye.classList.add("show");
+    openEye.classList.add("hide");
+  }
+});
+
+passwordTypeCon2.addEventListener("click", (e) => {
+  e.preventDefault();
+  const target = e.target.closest(".eye_icon2");
+  console.log(target);
+  if (!target) return;
+
+  if (target.classList.contains("closed_eye2")) {
+    clearConfirmPasswordInputClasses();
+
+    if (confirmPasswordInput.type === "password") {
+      confirmPasswordInput.type = "text";
+    }
+
+    closedEye2.classList.add("hide");
+    openEye2.classList.add("show");
+    console.log(inputField);
+  } else if (target.classList.contains("open_eye2")) {
+    clearConfirmPasswordInputClasses();
+
+    if (confirmPasswordInput.type === "text") {
+      confirmPasswordInput.type = "password";
+    }
+
+    closedEye2.classList.add("show");
+    openEye2.classList.add("hide");
+  }
+});
 
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();

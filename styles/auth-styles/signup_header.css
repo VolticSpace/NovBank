@@ -175,3 +175,13 @@ main {
 
   z-index: 9999;
 }
+.password_icon {
+  display: flex;
+  align-items: center;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
