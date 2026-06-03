@@ -15,8 +15,33 @@ const closeEye = document.querySelector(".close_eye");
 const eyeCon = document.querySelector(".eye_con");
 const notificationCount = document.querySelector(".notification_count");
 const notificationIcon = document.querySelectorAll(".notification_icon");
+const profileImg = document.querySelectorAll(".profile_img");
+const profileViewBtn = document.querySelector(".profile_view");
+const profileSettingCon = document.querySelector(".profile_details");
+const profileViewModal = document.querySelector(".modal_profile_details");
 export const dashboardManager = new BankManager();
 
+profileViewBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  profileSettingCon.classList.remove("hidden");
+  profileSettingCon.classList.remove("display");
+  profileViewModal.classList.remove("display");
+  profileViewModal.classList.remove("hidden");
+
+  profileSettingCon.classList.add("display");
+  profileViewModal.classList.add("display");
+});
+
+profileViewModal.addEventListener("click", (e) => {
+  e.preventDefault();
+  profileSettingCon.classList.remove("hidden");
+  profileSettingCon.classList.remove("display");
+  profileViewModal.classList.remove("display");
+  profileViewModal.classList.remove("hidden");
+
+  profileSettingCon.classList.remove("hidden");
+  profileViewModal.classList.remove("hidden");
+});
 notificationIcon.forEach((icon) => {
   icon.addEventListener("click", (e) => {
     e.preventDefault();
@@ -59,6 +84,9 @@ const renderDashboard = function () {
   renderTransactions(dashboardManager.getTransaction(), transactionsCon);
   greetMessage.textContent = `${greetUser()},`;
   renderNotificationCount();
+  profileImg.forEach(
+    (img) => (img.textContent = dashboardManager.getCurrentUser().fullName[0]),
+  );
 };
 renderDashboard();
 function clearEyeClasses() {

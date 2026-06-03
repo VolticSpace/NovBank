@@ -160,7 +160,7 @@ main {
   overflow-y: auto;
 }
 .general_error_msg {
-  position: fixed; /* changed */
+  position: fixed;
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
