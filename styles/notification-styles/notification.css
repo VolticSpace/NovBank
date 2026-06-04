@@ -113,3 +113,10 @@ body {
 .warning .icon_real {
   background: #f59e0b;
 }
+
+.msg {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}

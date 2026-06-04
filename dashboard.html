@@ -10,15 +10,125 @@
       href="styles/dashboard-styles/dashboard-header.css"
     />
     <link rel="stylesheet" href="styles/dashboard-styles/dashboard-main.css" />
+    <link
+      rel="stylesheet"
+      href="styles/dashboard-styles/profile_dropdown.css"
+    />
+    <link rel="stylesheet" href="styles/dashboard-styles/side_bar.css" />
   </head>
   <body>
+    <div class="side_bar"></div>
+    <div class="bottom_navigation">
+      <div class="action_con" tabindex="0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#f8fafc"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-house-icon lucide-house"
+        >
+          <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+          <path
+            d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 
+2H5a2 2 0 0 1-2-2z"
+          />
+        </svg>
+        <p>Dashboard</p>
+      </div>
+      <div class="action_con" tabindex="0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#f8fafc"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-wallet-icon lucide-wallet"
+        >
+          <path
+            d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 
+1-1v-2a1 1 0 0 0-1-1"
+          />
+          <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
+        </svg>
+        <p>Accounts</p>
+      </div>
+      <div class="action_con" tabindex="0">
+        <div class="transfer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"
+          >
+            <path d="M7 7h10v10" />
+            <path d="M7 17 17 7" />
+          </svg>
+        </div>
+        <p>Transfer</p>
+      </div>
+      <div class="action_con" tabindex="0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#f8fafc"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-credit-card-icon lucide-credit-card"
+        >
+          <rect width="20" height="14" x="2" y="5" rx="2" />
+          <line x1="2" x2="22" y1="10" y2="10" />
+        </svg>
+        <p>Cards</p>
+      </div>
+      <div class="action_con" tabindex="0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#f8fafc"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-user-round-pen-icon lucide-user-round-pen"
+        >
+          <path d="M2 21a8 8 0 0 1 10.821-7.487" />
+          <path
+            d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 
+0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"
+          />
+          <circle cx="10" cy="8" r="5" />
+        </svg>
+        <p>Profile</p>
+      </div>
+    </div>
     <div class="modal_profile_details"></div>
     <header class="dashboard_header">
       <div class="profile_details hidden">
         <div class="profile_credentials">
           <div class="profile_left">
             <div class="circle profile_img"></div>
-            <h3>Emmanuel Ayomide</h3>
+            <h3 class="user_name"></h3>
           </div>
         </div>
         <ul>
@@ -406,109 +516,6 @@
         <div class="transaction_movement_con"></div>
       </div>
     </main>
-    <div class="bottom_navigation">
-      <div class="action_con" tabindex="0">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#f8fafc"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-house-icon lucide-house"
-        >
-          <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
-          <path
-            d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-          />
-        </svg>
-        <p>Dashboard</p>
-      </div>
-      <div class="action_con" tabindex="0">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#f8fafc"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-wallet-icon lucide-wallet"
-        >
-          <path
-            d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"
-          />
-          <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
-        </svg>
-        <p>Accounts</p>
-      </div>
-      <div class="action_con" tabindex="0">
-        <div class="transfer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"
-          >
-            <path d="M7 7h10v10" />
-            <path d="M7 17 17 7" />
-          </svg>
-        </div>
-
-        <p>Transfer</p>
-      </div>
-      <div class="action_con" tabindex="0">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#f8fafc"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-credit-card-icon lucide-credit-card"
-        >
-          <rect width="20" height="14" x="2" y="5" rx="2" />
-          <line x1="2" x2="22" y1="10" y2="10" />
-        </svg>
-        <p>Cards</p>
-      </div>
-      <div class="action_con" tabindex="0">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#f8fafc"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-user-round-pen-icon lucide-user-round-pen"
-        >
-          <path d="M2 21a8 8 0 0 1 10.821-7.487" />
-          <path
-            d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"
-          />
-          <circle cx="10" cy="8" r="5" />
-        </svg>
-        <p>Profile</p>
-      </div>
-    </div>
-
     <script
       defer
       type="module"

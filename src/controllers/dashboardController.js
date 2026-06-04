@@ -1,6 +1,6 @@
 import { BankManager } from "../services/BankManager.js";
 import { renderTransactions, greetUser } from "../views/dashboardView.js";
-const dbUserName = document.querySelector(".user_name");
+const dbUserName = document.querySelectorAll(".user_name");
 const dbTotalBal = document.querySelector(".db_total_bal");
 const dbAvailableBal = document.querySelector(".db_avail_bal");
 const transferBtn = document.querySelector(".transfer_btn");
@@ -76,7 +76,9 @@ const renderNotificationCount = () => {
   notificationCount.textContent = unreadMsg.length;
 };
 const renderDashboard = function () {
-  dbUserName.textContent = dashboardManager.getCurrentUser().fullName;
+  dbUserName.forEach(
+    (name) => (name.textContent = dashboardManager.getCurrentUser().fullName),
+  );
   dbTotalBal.textContent = dashboardManager.getBalance();
   dbAvailableBal.textContent = dashboardManager.getBalance();
   const transactionDetails = dashboardManager.getTransaction();
