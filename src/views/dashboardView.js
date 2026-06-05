@@ -37,3 +37,7 @@ export const greetUser = () => {
   }
   return time;
 };
+
+export const navigatePage = (page) => {
+  window.location.href = `${page}.html`;
+};

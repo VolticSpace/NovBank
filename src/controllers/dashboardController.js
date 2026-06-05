@@ -1,5 +1,9 @@
 import { BankManager } from "../services/BankManager.js";
-import { renderTransactions, greetUser } from "../views/dashboardView.js";
+import {
+  renderTransactions,
+  greetUser,
+  navigatePage,
+} from "../views/dashboardView.js";
 const dbUserName = document.querySelectorAll(".user_name");
 const dbTotalBal = document.querySelector(".db_total_bal");
 const dbAvailableBal = document.querySelector(".db_avail_bal");
@@ -22,8 +26,20 @@ const profileViewModal = document.querySelector(".modal_profile_details");
 const sideMenuIcon = document.querySelector(".side_menu_icon");
 const sideBar = document.querySelector(".side_bar");
 const hideSideBarIcon = document.querySelector(".cancel_icon");
-
+const bottomNav = document.querySelectorAll(".action_con");
 export const dashboardManager = new BankManager();
+
+function handleNavLink(links) {}
+
+bottomNav.forEach((nav) => {
+  nav.addEventListener("click", (e) => {
+    bottomNav.forEach((item) => item.classList.remove("active"));
+    nav.classList.add("active");
+    const target = e.target.closest(".action_con");
+    const pageLink = target.dataset.link;
+    navigatePage(pageLink);
+  });
+});
 
 sideMenuIcon.addEventListener("click", (e) => {
   e.preventDefault();

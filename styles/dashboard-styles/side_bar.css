@@ -61,3 +61,8 @@
   padding: 0.8rem;
   border-radius: 0.8rem;
 }
+.active {
+  background: var(--gradient-primary);
+  padding: 1.2rem;
+  border-radius: 4rem;
+}
