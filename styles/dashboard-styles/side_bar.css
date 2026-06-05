@@ -3,21 +3,23 @@
   top: 0;
   left: 0;
   bottom: 0;
-  display: flex;
   flex-direction: column;
   background: var(--gradient-secondary);
   border-right: 1px solid var(--text);
   padding: 2rem;
   width: 19rem;
-  /* overflow-y: scroll; */
-  /* scrollbar-width: none; */
   padding-top: 8rem;
   z-index: 1000000;
-  /* -ms-overflow-style: none; */
-  /* display: none; */
+  display: none;
 }
 .side_bar::-webkit-scrollbar {
   display: none;
+}
+.hide_side_bar {
+  display: none;
+}
+.show_side_bar {
+  display: flex;
 }
 .side_bar ul {
   display: flex;
@@ -35,6 +37,9 @@
   gap: 0.8rem;
   align-items: center;
 }
+.side_bar a {
+  color: var(--text-primary);
+}
 .bottom_side {
   position: absolute;
   bottom: 0rem;
@@ -50,4 +55,9 @@
   margin-top: 4rem;
   height: 6rem;
   padding: 0.8rem 2rem;
+}
+.active {
+  background-color: var(--primary-color);
+  padding: 0.8rem;
+  border-radius: 0.8rem;
 }

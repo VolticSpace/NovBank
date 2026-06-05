@@ -19,8 +19,43 @@ const profileImg = document.querySelectorAll(".profile_img");
 const profileViewBtn = document.querySelector(".profile_view");
 const profileSettingCon = document.querySelector(".profile_details");
 const profileViewModal = document.querySelector(".modal_profile_details");
+const sideMenuIcon = document.querySelector(".side_menu_icon");
+const sideBar = document.querySelector(".side_bar");
+const hideSideBarIcon = document.querySelector(".cancel_icon");
+
 export const dashboardManager = new BankManager();
 
+sideMenuIcon.addEventListener("click", (e) => {
+  e.preventDefault();
+  profileViewModal.classList.remove("display");
+  sideBar.classList.remove("show_side_bar");
+  profileViewModal.classList.remove("hidden");
+  sideBar.classList.remove("hide_side_bar");
+  hideSideBarIcon.classList.remove("hide-side_bar");
+  hideSideBarIcon.classList.remove("show_side_bar");
+  sideMenuIcon.classList.remove("show_side_bar");
+
+  profileViewModal.classList.add("display");
+  hideSideBarIcon.classList.add("show_side_bar");
+  sideMenuIcon.classList.add("hide_side_bar");
+  sideBar.classList.add("show_side_bar");
+});
+
+hideSideBarIcon.addEventListener("click", (e) => {
+  e.preventDefault();
+  profileViewModal.classList.remove("display");
+  sideBar.classList.remove("show_side_bar");
+  profileViewModal.classList.remove("hidden");
+  sideBar.classList.remove("hide_side_bar");
+  hideSideBarIcon.classList.remove("hide-side_bar");
+  hideSideBarIcon.classList.remove("show_side_bar");
+  sideMenuIcon.classList.remove("show_side_bar");
+
+  profileViewModal.classList.add("hidden");
+  hideSideBarIcon.classList.add("hide_side_bar");
+  sideMenuIcon.classList.add("show_side_bar");
+  sideBar.classList.add("hide_side_bar");
+});
 profileViewBtn.addEventListener("click", (e) => {
   e.preventDefault();
   profileSettingCon.classList.remove("hidden");
@@ -30,6 +65,9 @@ profileViewBtn.addEventListener("click", (e) => {
 
   profileSettingCon.classList.add("display");
   profileViewModal.classList.add("display");
+  hideSideBarIcon.classList.remove("show_side_bar");
+  sideMenuIcon.classList.add("show_side_bar");
+  sideBar.classList.remove("show_side_bar");
 });
 
 profileViewModal.addEventListener("click", (e) => {
@@ -41,6 +79,18 @@ profileViewModal.addEventListener("click", (e) => {
 
   profileSettingCon.classList.remove("hidden");
   profileViewModal.classList.remove("hidden");
+
+  if (sideBar) {
+    profileViewModal.classList.remove("display");
+    sideBar.classList.remove("show_side_bar");
+    profileViewModal.classList.remove("hidden");
+    sideBar.classList.remove("hide_side_bar");
+
+    profileViewModal.classList.remove("display");
+    sideBar.classList.remove("show_side_bar");
+    hideSideBarIcon.classList.remove("show_side_bar");
+    sideMenuIcon.classList.add("show_side_bar");
+  }
 });
 notificationIcon.forEach((icon) => {
   icon.addEventListener("click", (e) => {
