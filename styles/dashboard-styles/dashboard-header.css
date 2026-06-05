@@ -1,16 +1,25 @@
 body {
   background: var(--gradient-secondary);
   min-height: 100vh;
+  position: relative;
 }
 .dashboard_header {
   padding: 2rem 1.6rem 0rem 1.6rem;
+  padding-top: 4rem;
   position: relative;
 }
 .dashboard_navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--gradient-secondary);
+  border-bottom: 1px solid var(--text);
+  z-index: 10000000000;
+  padding: 1rem;
 }
 .dash_left,
 .dash_right {
@@ -105,10 +114,10 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.2rem;
+  width: 1.2rem;
   color: var(--text-primary);
   background-color: red;
-  right: 5.68rem;
-  top: 1.8rem;
+  right: 5.4rem;
+  top: 1rem;
 }
