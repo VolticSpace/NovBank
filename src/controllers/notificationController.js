@@ -5,20 +5,21 @@ const notificationManager = new AuthManager();
 const notificationsCon = document.querySelector(".notifications-container");
 
 const markAllReadBtn = document.querySelector(".mark_read_btn");
-const markReadBtn = document.querySelector(".mark_read_btn");
 
-markReadBtn.addEventListener("click", (e) => {
+markAllReadBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   const users = notificationManager.getUserArray();
   const currentUser = notificationManager.getCurrentUser();
 
-  const user = users.find((u) => u.accountNo === currentUser.accountNo);
+  const user = users.find((u) => u.id === currentUser.id);
+  user.notifications.forEach((notif) => {
+    notif.read = true;
+  });
 
-  if (user) {
-    user.notificationMirror.length = 0;
-  }
-
+  notificationsCon
+    .querySelectorAll(".notification")
+    .forEach((div) => div.classList.add("read"));
   notificationManager.saveUser();
   notificationManager.saveCurrentUser(user);
 });

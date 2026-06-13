@@ -27,7 +27,34 @@ const sideMenuIcon = document.querySelector(".side_menu_icon");
 const sideBar = document.querySelector(".side_bar");
 const hideSideBarIcon = document.querySelector(".cancel_icon");
 const bottomNav = document.querySelectorAll(".action_con");
+const viewAllTransaction = document.querySelector(".view_all_trans");
+const sideBarMenuNav = document.querySelector(".side_bar_nav");
 export const dashboardManager = new BankManager();
+
+sideBarMenuNav.addEventListener("click", (e) => {
+  e.preventDefault();
+  const target = e.target.closest(".link");
+  if (!target) return;
+  sideBarMenuNav
+    .querySelectorAll("li")
+    .forEach((li) => li.classList.remove("active"));
+  target.classList.add("active");
+  const goTo = target.dataset.link;
+  if (goTo === "logout") {
+    setTimeout(() => {
+      window.addEventListener("beforeunload", (e) => {
+        e.preventDefault();
+        e.returnValue = "";
+      });
+      localStorage.removeItem("currentUser");
+      window.location.href = "auth.html";
+    }, 500);
+    return;
+  }
+  setTimeout(() => {
+    navigatePage(goTo);
+  }, 500);
+});
 
 function handleNavLink(links) {}
 
@@ -41,8 +68,12 @@ bottomNav.forEach((nav) => {
   });
 });
 
-sideMenuIcon.addEventListener("click", (e) => {
+viewAllTransaction.addEventListener("click", (e) => {
   e.preventDefault();
+  window.location.href = "transactions.html";
+});
+
+function clearSidebarClass() {
   profileViewModal.classList.remove("display");
   sideBar.classList.remove("show_side_bar");
   profileViewModal.classList.remove("hidden");
@@ -50,6 +81,11 @@ sideMenuIcon.addEventListener("click", (e) => {
   hideSideBarIcon.classList.remove("hide-side_bar");
   hideSideBarIcon.classList.remove("show_side_bar");
   sideMenuIcon.classList.remove("show_side_bar");
+  profileSettingCon.classList.remove("display");
+}
+sideMenuIcon.addEventListener("click", (e) => {
+  e.preventDefault();
+  clearSidebarClass();
 
   profileViewModal.classList.add("display");
   hideSideBarIcon.classList.add("show_side_bar");
@@ -59,25 +95,22 @@ sideMenuIcon.addEventListener("click", (e) => {
 
 hideSideBarIcon.addEventListener("click", (e) => {
   e.preventDefault();
-  profileViewModal.classList.remove("display");
-  sideBar.classList.remove("show_side_bar");
-  profileViewModal.classList.remove("hidden");
-  sideBar.classList.remove("hide_side_bar");
-  hideSideBarIcon.classList.remove("hide-side_bar");
-  hideSideBarIcon.classList.remove("show_side_bar");
-  sideMenuIcon.classList.remove("show_side_bar");
+  clearSidebarClass();
 
   profileViewModal.classList.add("hidden");
   hideSideBarIcon.classList.add("hide_side_bar");
   sideMenuIcon.classList.add("show_side_bar");
   sideBar.classList.add("hide_side_bar");
 });
-profileViewBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+function clearSettingConClass() {
   profileSettingCon.classList.remove("hidden");
   profileSettingCon.classList.remove("display");
   profileViewModal.classList.remove("display");
   profileViewModal.classList.remove("hidden");
+}
+profileViewBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  clearSettingConClass();
 
   profileSettingCon.classList.add("display");
   profileViewModal.classList.add("display");
@@ -88,14 +121,7 @@ profileViewBtn.addEventListener("click", (e) => {
 
 profileViewModal.addEventListener("click", (e) => {
   e.preventDefault();
-  profileSettingCon.classList.remove("hidden");
-  profileSettingCon.classList.remove("display");
-  profileViewModal.classList.remove("display");
-  profileViewModal.classList.remove("hidden");
-
-  profileSettingCon.classList.remove("hidden");
-  profileViewModal.classList.remove("hidden");
-
+  clearSettingConClass();
   if (sideBar) {
     profileViewModal.classList.remove("display");
     sideBar.classList.remove("show_side_bar");
@@ -178,3 +204,7 @@ closeEye.addEventListener("click", () => {
   dbTotalBal.textContent = dashboardManager.getBalance();
   dbAvailableBal.textContent = dashboardManager.getBalance();
 });
+
+// const m = showUpdatedDate("2026-06-13T08:00:00Z", (text) => {
+// console.log(text);
+// });

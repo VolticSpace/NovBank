@@ -40,3 +40,18 @@ export const formatCurrency = (amount) => {
   });
   return currency.format(amount);
 };
+
+export const timeAgo = (createdAt) => {
+  const now = Date.now();
+  const diff = Math.floor(now - createdAt);
+  const secs = Math.floor(diff / 1000);
+  const mins = Math.floor(secs / 60);
+  const hrs = Math.floor(mins / 60);
+  const days = Math.floor(hrs / 24);
+  const weeks = Math.floor(days / 7);
+  if (secs <= 60) return `just now`;
+  if (mins >= 1) return `${mins} mins ago`;
+  if (hrs >= 1) return `${hrs} hrs ago`;
+  if (days >= 1) return `${days} ${days === 1 ? "day" : "days"} ago`;
+  if (weeks >= 1) return `${weeks} ${weeks === 1 ? "week" : "weeks"} ago`;
+};

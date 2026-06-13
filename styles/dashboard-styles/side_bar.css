@@ -35,7 +35,10 @@
 .side_bar li {
   display: flex;
   gap: 0.8rem;
+  color: var(--text-primary);
   align-items: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
 }
 .side_bar a {
   color: var(--text-primary);

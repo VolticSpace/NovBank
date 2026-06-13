@@ -40,10 +40,7 @@ export class AuthManager {
             "Your account setup has been completed successfully. Welcome to a smarter banking experience with NovaBank, where security, convenience, and reliability come first. Start exploring our services and enjoy effortless banking today.",
           type: "success",
           read: false,
-          createdAt: {
-            time: new Date().toLocaleTimeString(),
-            date: new Date().toLocaleDateString(),
-          },
+          createdAt: Date.now(),
           icon: "✔",
         },
       ],

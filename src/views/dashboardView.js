@@ -1,12 +1,13 @@
-import { formatMovement } from "../utils/helpers.js";
+import { formatMovement, timeAgo } from "../utils/helpers.js";
+
 export const renderTransactions = (arr, con) => {
   let html = "";
   arr.forEach((obj) => {
-    html += ` <div class="transaction_detail">
+    html += ` <div class="transaction_detail" data-createdAt="${Date.now()}">
  <div class="detail_left">
    <div class="flex_row">
      <p class="account_type">${obj.type}</p>
-     <p class="account_id">${obj.timestamp}</
+     <p class="trans_interval" data-created-at="${obj.timestamp}"></
    span></p>
    </div>
  </div>
@@ -24,7 +25,14 @@ export const renderTransactions = (arr, con) => {
   No transactions yet
 </p>`;
   }
-  con.insertAdjacentHTML("beforeend", html);
+  con.insertAdjacentHTML("beforebegin", html);
+  const timeDiv = document.querySelectorAll(".trans_interval");
+  timeDiv.forEach((div) => {
+    div.textContent = timeAgo(div.dataset.createdAt);
+    setInterval(() => {
+      div.textContent = timeAgo(div.dataset.createdAt);
+    }, 60000);
+  });
 };
 export const greetUser = () => {
   let time = new Date().getHours();

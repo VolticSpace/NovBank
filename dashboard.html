@@ -15,6 +15,10 @@
       href="styles/dashboard-styles/profile_dropdown.css"
     />
     <link rel="stylesheet" href="styles/dashboard-styles/side_bar.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"
+    ></script>
   </head>
   <body>
     <div class="side_bar">
@@ -24,8 +28,8 @@
           <h3 class="user_name"></h3>
         </div>
       </div>
-      <ul>
-        <li class="active">
+      <ul class="side_bar_nav">
+        <li class="active link" data-link="dashboard">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -43,10 +47,11 @@
               d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
             />
           </svg>
-          <a href="#">DashBoard</a>
+
+          Dashboard
         </li>
 
-        <li>
+        <li class="link" data-link="transfers">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -63,9 +68,10 @@
               d="M13.207 19.793a.707.707 0 0 1-1.207-.5V16a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h6a1 1 0 0 0 1-1V4.707a.707.707 0 0 1 1.207-.5l6.94 6.94a1.207 1.207 0 0 1 0 1.707z"
             />
           </svg>
-          <a href="#">Transfer</a>
+
+          Transfer
         </li>
-        <li>
+        <li class="link" data-link="transactions">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -83,9 +89,10 @@
             <path d="m8 21-4-4 4-4" />
             <path d="M4 17h16" />
           </svg>
-          <a href="#">Transactions</a>
+
+          Transactions
         </li>
-        <li>
+        <li class="link" data-link="notificationPage">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -103,9 +110,10 @@
               d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"
             />
           </svg>
-          <a href="#">Notifications</a>
+
+          Notification
         </li>
-        <li>
+        <li class="link" data-link="settings">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -123,9 +131,10 @@
             />
             <circle cx="12" cy="12" r="3" />
           </svg>
-          <a href="#">Settings</a>
+
+          Settings
         </li>
-        <li>
+        <li class="link" data-link="helpSupport">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -144,9 +153,10 @@
             <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
             <line x1="12" x2="12.01" y1="17" y2="17" />
           </svg>
-          <a href="#">Help and Support</a>
+
+          Help and Support
         </li>
-        <li>
+        <li class="link" data-link="logout">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -163,7 +173,7 @@
             <path d="M21 12H9" />
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
           </svg>
-          <a href="#">Log out</a>
+          Logout
         </li>
       </ul>
     </div>
@@ -171,8 +181,8 @@
       <div class="action_con active" tabindex="0" data-link="dashboard">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
+          width="12"
+          height="12"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#f8fafc"
@@ -192,8 +202,8 @@
       <div class="action_con" tabindex="0" data-link="Accounts">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
+          width="12"
+          height="12"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#f8fafc"
@@ -214,8 +224,8 @@
         <div class="transfer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width="12"
+            height="12"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -230,29 +240,31 @@
         </div>
         <p>Transfer</p>
       </div>
-      <div class="action_con" tabindex="0" data-link="cards">
+      <div class="action_con" tabindex="0" data-link="transactions">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
+          width="12"
+          height="12"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#f8fafc"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-credit-card-icon lucide-credit-card"
+          class="lucide lucide-arrow-right-left-icon lucide-arrow-right-left"
         >
-          <rect width="20" height="14" x="2" y="5" rx="2" />
-          <line x1="2" x2="22" y1="10" y2="10" />
+          <path d="m16 3 4 4-4 4" />
+          <path d="M20 7H4" />
+          <path d="m8 21-4-4 4-4" />
+          <path d="M4 17h16" />
         </svg>
-        <p>Cards</p>
+        <p>Transaction</p>
       </div>
       <div class="action_con" tabindex="0" data-link="profile">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
+          width="12"
+          height="12"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#f8fafc"
@@ -678,7 +690,7 @@
       <div class="recent_transaction_con">
         <div class="accounts_hd">
           <p>Recent Transactions</p>
-          <p class="view_all">See All</p>
+          <p class="view_all view_all_trans">See All</p>
         </div>
         <div class="transaction_movement_con"></div>
       </div>

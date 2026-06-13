@@ -43,7 +43,7 @@ body {
 
 .notifications-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 18px;
 }
 
@@ -59,11 +59,11 @@ body {
 }
 
 .notification:hover {
-  background-color: rgba(255, 255, 255, 0.6);
+  background: var(--accent-color-light);
 }
 
 .read {
-  background-color: rgba(255, 255, 255, 0.6);
+  background: var(--accent-color-light);
 }
 .icon_real {
   width: 25px;

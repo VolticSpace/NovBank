@@ -47,10 +47,7 @@ export class BankManager extends AuthManager {
         message: `You tried to transfer to an invalid account number`,
         type: "warning",
         read: false,
-        createdAt: {
-          time: new Date().toLocaleTimeString(),
-          date: new Date().toLocaleDateString(),
-        },
+        createdAt: Date.now(),
         reference: `TNX${Date.now()}`,
         icon: "📌",
       });
@@ -66,10 +63,7 @@ export class BankManager extends AuthManager {
         message: `Your balance is too low to do such transaction`,
         type: "warning",
         read: false,
-        createdAt: {
-          time: new Date().toLocaleTimeString(),
-          date: new Date().toLocaleDateString(),
-        },
+        createdAt: Date.now(),
         reference: `TNX${Date.now()}`,
         icon: "📌",
       });
@@ -86,10 +80,7 @@ export class BankManager extends AuthManager {
         message: `You tried transfering to yourself`,
         type: "warning",
         read: false,
-        createdAt: {
-          time: new Date().toLocaleTimeString(),
-          date: new Date().toLocaleDateString(),
-        },
+        createdAt: Date.now(),
         reference: `TNX${Date.now()}`,
         icon: "📌",
       });
@@ -107,7 +98,7 @@ export class BankManager extends AuthManager {
       sender: currentUser.fullName,
       receiver: receiver.fullName,
       type: "transfer",
-      timestamp: new Date().toLocaleDateString(),
+      timestamp: Date.now(),
       reference: `TNX${Date.now()}`,
       naration: inputs.naration,
     });
@@ -117,7 +108,7 @@ export class BankManager extends AuthManager {
       sender: currentUser.fullName,
       receiver: receiver.fullName,
       type: "deposit",
-      timestamp: new Date().toLocaleDateString(),
+      timestamp: Date.now(),
       reference: `TNX${Date.now()}`,
     });
 
@@ -127,10 +118,7 @@ export class BankManager extends AuthManager {
       message: `You transfer of NGN ${inputs.amount} to ${receiver.fullName}[${receiver.accountNo}] is successful`,
       type: "success",
       read: false,
-      createdAt: {
-        time: new Date().toLocaleTimeString(),
-        date: new Date().toLocaleDateString(),
-      },
+      createdAt: Date.now(),
       reference: `TNX${Date.now()}`,
       icon: "✔",
     });
@@ -143,10 +131,7 @@ export class BankManager extends AuthManager {
       } [${currentUser.accountNo}] which as being added to your balance`,
       type: "success",
       read: false,
-      createdAt: {
-        time: new Date().toLocaleTimeString(),
-        date: new Date().toLocaleDateString(),
-      },
+      createdAt: Date.now(),
       reference: `TNX${Date.now()}`,
       icon: "✔",
     });
