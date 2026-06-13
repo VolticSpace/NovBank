@@ -42,10 +42,6 @@ sideBarMenuNav.addEventListener("click", (e) => {
   const goTo = target.dataset.link;
   if (goTo === "logout") {
     setTimeout(() => {
-      window.addEventListener("beforeunload", (e) => {
-        e.preventDefault();
-        e.returnValue = "";
-      });
       localStorage.removeItem("currentUser");
       window.location.href = "auth.html";
     }, 500);
